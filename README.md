@@ -2,12 +2,12 @@
 
 
 
--- criando valores predefinidos para a coluna sexo
+### criando valores predefinidos para a coluna sexo
 ```sql
 CREATE TYPE genero AS ENUM ('Masculino','Feminino');
 ```
 
--- Criando a tabela funcionarios
+### Criando a tabela funcionarios
 ```sql
 create table funcionarios(
 			id int PRIMARY KEY NOT NULL,
@@ -23,7 +23,7 @@ create table funcionarios(
 ```
 
 
--- 1. Importando a base de dados em formato txt para o banco de dados
+### 1. Importando a base de dados em formato txt para o banco de dados
 ```sql
 COPY FUNCIONARIOS
 FROM 'D:\exportados_postgre\funcionarios_localizacao2.csv'
@@ -32,7 +32,7 @@ CSV HEADER;
 ```
 
 
--- 2. Projetando as primeiras 25 linhas da tabela
+### 2. Projetando as primeiras 25 linhas da tabela
 ```sql
 select * 
 from funcionarios 
@@ -41,7 +41,7 @@ limit 25;
 <br/>
 
 
--- PERGUNTAS E ANÁLISES BÁSICAS Exploração Inicial
+## PERGUNTAS E ANÁLISES BÁSICAS Exploração Inicial
 
 
 ### 1. Quantos funcionários existem no total?
@@ -146,6 +146,44 @@ group by 1;
 
 
 ### 10. Qual o salário médio geral?
+```sql
 select 
 		round(avg(salario),2) as media_salario
 from funcionarios;
+```
+<br/>
+
+
+### 11. Qual o salário mínimo e máximo?
+```sql
+select 
+		min(salario) as menor_salario,
+		max(salario) as maior_salario
+from funcionarios;
+```
+<br/>
+
+
+### 12. Qual a mediana salarial?
+```sql
+select 
+		round(median(salario),2) as mediana_salarial
+from funcionarios;
+```
+<br/>
+
+
+### 13. Qual o desvio padrão dos salários?
+```sql
+select
+		round(stddev_pop(salario),2) as desvio_padrao
+from funcionarios;
+```
+<br/>
+
+
+## ANÁLISE TEMPORAL
+
+
+### 14. 
+
