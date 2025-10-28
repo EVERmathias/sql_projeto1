@@ -185,5 +185,65 @@ from funcionarios;
 ## ANÁLISE TEMPORAL
 
 
-### 14. 
+### 14. Qual a média de funcionários admitidos por mês?
+```sql
+select	
+		mes,
+		round(avg(contagem),0) as media_contagem
+from (select	
+				extract(month from data_admissao) as mes,
+				count(*) as contagem
+		from funcionarios
+		group by mes) as subconsulta
+group by mes
+order by 1;
+```
+<br/>
 
+
+
+### 15. Qual ano teve mais contratações?
+```sql
+select 
+		extract(year from data_admissao) as ano,
+		count(*) as qtde_funcionarios
+from funcionarios
+group by ano
+order by 2 desc
+limit 1;
+```
+<br/>
+
+
+### 16. Calcule o tempo médio de casa dos funcionários (em anos)
+```sql
+select	
+		round(avg(((current_date - data_admissao)/365)),2) as media_anos
+from funcionarios;
+```
+<br/>
+
+
+### 17. Identifique os 10 funcionários mais antigos
+```sql
+select
+		nome,
+		data_admissao
+from funcionarios
+order by 2
+limit 10;
+```
+<br/>
+
+
+## ANÁLISE SALARIAL AVANÇADA
+
+### 18. Qual o salário médio por departamento?
+```sql
+select 	
+		departamento,
+		round(avg(salario),2) as media_salarial
+from funcionarios
+group by departamento;
+```
+<br/>
