@@ -340,4 +340,200 @@ order by 1,3 desc;
 
 ## ANÁLISE DE CARGOS 
 
+### 26. Quantos cargos únicos existem?
+```sql
+select
+		count(distinct cargo)
+from funcionarios;
+```
+<br/>
 
+
+### 27. Quais os 10 cargos mais comuns?
+```sql
+select	
+		cargo,
+		count(*) as qtde_funcionarios
+from funcionarios
+group by cargo
+order by 2 desc
+limit 10;
+```
+<br/>
+
+
+### 28. Qual cargo tem o maior salário médio?
+```sql
+select
+		cargo,
+		round(avg(salario),2) as media_salario
+from funcionarios
+group by cargo
+order by 2 desc
+limit 1;
+```
+<br/>
+
+
+### 29. Identifique cargos que aparecem em apenas um departamento
+```sql
+select	
+		cargo
+from funcionarios
+group by cargo
+having count(departamento) = 1;
+```
+<br/>
+
+
+## ANÁLISE FILTROS E ORDENAÇÃO
+
+### 30. Mostre todos os funcionários do Brasil.
+```sql
+select
+		nome,
+		cargo,
+		pais
+from funcionarios
+where pais = 'Brasil';
+```
+<br/>
+
+
+### 31. Liste os funcionários do departamento “Computadores” com salário acima de 70.000.
+```sql
+select 
+		nome,
+		departamento,
+		salario
+from funcionarios
+where departamento = 'Computadores'
+and salario > 70000;
+```
+<br/>
+
+
+### 32. Exiba funcionários contratados após 2013.
+```sql
+select
+		nome,
+		cargo,
+		data_admissao
+from funcionarios
+where data_admissao > '2013-01-01';
+```
+<br/>
+
+
+### 33. Liste os 10 primeiros funcionários ordenados pelo salário do maior para o menor.
+```sql
+select
+		nome,
+		salario
+from funcionarios
+order by 2 desc;
+```
+<br/>
+
+
+### 34. Mostre o nome, departamento e salário dos 5 funcionários mais bem pagos.
+```sql
+select
+		nome,
+		departamento,
+		salario
+from funcionarios
+order by 3 desc
+limit 5;
+```
+<br/>
+
+
+## AGREGAÇÕES E AGRUPAMENTOS
+
+### 35. Mostre quantos funcionários há em cada departamento, ordenando do maior para o menor número.
+```sql
+select
+		departamento,
+		count(*)
+from funcionarios
+group by departamento
+order by 1;
+```
+<br/>
+
+
+## CONDIÇÕES COM AGREGAÇÃO
+
+### 36. Mostre apenas os departamentos com média salarial acima de 100.000.
+```sql
+select
+		departamento,
+		round(avg(salario),2)
+from funcionarios
+group by departamento
+having avg(salario) > 100000;
+```
+<br/>
+
+
+### 37. Liste os departamentos que possuem mais de 50 funcionários.
+```sql
+select
+		departamento,
+		count(id)
+from funcionarios
+group by departamento
+having count(id) > 50;
+```
+<br/>
+
+
+### 38. Exiba o salário médio por país e por departamento.
+```sql
+select
+		pais,
+		departamento,
+		round(avg(salario),2) as salario_medio		
+from funcionarios
+group by pais, departamento
+order by 1,3 desc;
+```
+<br/>
+
+
+### 39. Liste o nome e salário do funcionário mais bem pago de cada departamento.
+```sql
+select 	
+		f.nome,
+		f.departamento,
+		f.salario
+from funcionarios as f
+where salario = (select 
+						max(salario)
+				 from funcionarios
+				 where departamento = f.departamento);
+```
+<br/>
+
+
+### 40. Contagem de contração por ano.
+```sql
+select	
+		extract(year from data_admissao) as ano,
+		count(*) as contagem_funcionarios
+from funcionarios
+group by ano
+order by 2 desc;
+```
+<br/>
+
+
+### 41. Salário médio por cargo
+```sql
+select
+		cargo,
+		round(avg(salario),2) as salario_medio
+from funcionarios
+group by cargo;
+```
