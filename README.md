@@ -247,3 +247,97 @@ from funcionarios
 group by departamento;
 ```
 <br/>
+
+
+### 19. Quais os 5 cargos mais bem pagos?
+```sql
+select
+		cargo,
+		salario
+from funcionarios
+group by cargo, salario
+order by 2 desc
+limit 5;
+```
+<br/>
+
+
+### 20. Compare o salário médio entre homens e mulheres
+```sql
+select sexo,
+		round(avg(salario),2) as media_salarial
+from funcionarios
+group by sexo;
+```
+<br/>
+
+### 21. Existe diferença salarial significativa entre regiões?
+```sql
+select 
+		pais,
+		localizacao,
+		sum(salario) as salario_total_departamento
+from funcionarios
+group by pais, localizacao
+order by 3 desc;
+```
+<br/>
+
+### ANÁLISE GEOGRÁFICA
+
+### 22. Quantos funcionários por região (Brasil)?
+```sql
+select
+		localizacao,
+		pais,
+		count(id) as qtde_funcionarios
+from funcionarios
+where pais = 'Brasil'
+group by pais, localizacao
+order by 3 desc;
+```
+<br/>
+
+### 23. Quantos funcionários por província (Canadá)?
+```sql
+select
+		localizacao,
+		pais,
+		count(id) as qtde_funcionarios
+from funcionarios
+where pais = 'Canada'
+group by pais, localizacao
+order by 3 desc;
+```
+<br/>
+
+
+### 24. Qual região/província tem o maior salário médio?
+```sql
+select
+		localizacao,
+		pais,
+		round(avg(salario),2) as salario_medio
+from funcionarios
+group by localizacao, pais
+order by 3 desc;
+```
+<br/>
+
+
+### 25. Distribua os funcionários por país e sexo
+```sql
+select	
+		pais,
+		sexo,
+		count(id) as qtde_funcionarios
+from funcionarios
+group by sexo, pais
+order by 1,3 desc;
+```
+<br/>
+
+
+## ANÁLISE DE CARGOS 
+
+
