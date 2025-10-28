@@ -2,7 +2,7 @@
 
 
 
-### criando valores predefinidos para a coluna sexo
+### Criando valores predefinidos para a coluna sexo
 ```sql
 CREATE TYPE genero AS ENUM ('Masculino','Feminino');
 ```
