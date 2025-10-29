@@ -21,7 +21,7 @@ create table funcionarios(
 			pais varchar(20)	
 );
 ```
-![1_contagem_funcionarios.png](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/1_contagem_funcionarios.png)
+<br\>
 
 ### 1. Importando a base de dados em formato txt para o banco de dados
 ```sql
@@ -50,6 +50,8 @@ select
 	count(*) as contagem_funcionarios
 from funcionarios;
 ```
+![Contagem funcionários total](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/1_contagem_funcionarios.png)
+
 <br/>
 
 
@@ -60,6 +62,7 @@ from information_schema.columns
 where table_schema = 'public' 
 and table_name = 'funcionarios';
 ```
+![Colunas no Dataset](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/2_contagem_colunas.png)
 <br/>
 
 
