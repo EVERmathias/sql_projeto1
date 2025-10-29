@@ -50,7 +50,7 @@ select
 	count(*) as contagem_funcionarios
 from funcionarios;
 ```
-![Contagem funcionários total](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/1_contagem_funcionarios.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/1_contagem_funcionarios.png)
 
 <br/>
 
@@ -62,7 +62,7 @@ from information_schema.columns
 where table_schema = 'public' 
 and table_name = 'funcionarios';
 ```
-![Colunas no Dataset](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/2_contagem_colunas.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/2_contagem_colunas.png)
 <br/>
 
 
@@ -74,7 +74,7 @@ from information_schema.columns
 where table_schema = 'public'
 and table_name = 'funcionarios';
 ```
-![Tipos em cada coluna](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/3_tipos_dados_coluna.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/3_tipos_dados_coluna.png)
 
 <br/>
 
@@ -91,7 +91,7 @@ or cargo is null
 or localizacao is null 
 or pais is null;
 ```
-![Nulos ou duplicados](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/4_verifica_valores_nulos.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/4_verifica_valores_nulos.png)
 
 <br/>
 
@@ -105,7 +105,7 @@ select
 	   count(distinct pais) as paises_distintos
 from funcionarios;
 ```
-![Distintos das variáveis](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/5_conta_valores_distintos.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/5_conta_valores_distintos.png)
 
 <br/>
 
@@ -118,7 +118,7 @@ select sexo,
 from funcionarios
 group by sexo;
 ```
-![Distribuição por sexo](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/6_contagem_por_sexo.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/6_contagem_por_sexo.png)
 
 <br/>
 
@@ -129,7 +129,7 @@ select
 		distinct departamento
 from funcionarios;
 ```
-![Departamentos distintos](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/7_contagem_departamentos.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/7_contagem_departamentos.png)
 
 <br/>
 
@@ -144,7 +144,7 @@ group by departamento
 order by 1
 limit 1;
 ```
-![Derpartamentos mais populoso](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/8_departamento_mais_populoso.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/8_departamento_mais_populoso.png)
 <br/>
 
 
@@ -156,7 +156,7 @@ select
 from funcionarios
 group by 1;
 ```
-![BrasilvsCanada](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/9_contagem_brasil_vs_canada.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/9_contagem_brasil_vs_canada.png)
 
 <br/>
 
@@ -167,7 +167,7 @@ select
 		round(avg(salario),2) as media_salario
 from funcionarios;
 ```
-![salario médio geral](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
 
 <br/>
 
@@ -179,7 +179,7 @@ select
 		max(salario) as maior_salario
 from funcionarios;
 ```
-![Salario minimo e maximo](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/11_maior_e_menor_salario.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/11_maior_e_menor_salario.png)
 
 <br/>
 
@@ -190,7 +190,7 @@ select
 		round(median(salario),2) as mediana_salarial
 from funcionarios;
 ```
-![Mediana salarial](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/12_mediana_salarial.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/12_mediana_salarial.png)
 
 <br/>
 
@@ -201,7 +201,7 @@ select
 		round(stddev_pop(salario),2) as desvio_padrao
 from funcionarios;
 ```
-![Desvio padrao salarial](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/13_desvio_padrao.png)
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/13_desvio_padrao.png)
 
 <br/>
 
@@ -319,6 +319,8 @@ from funcionarios
 group by pais, localizacao
 order by 3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/21_comparacao_salario_entre_regioes.png)
+
 <br/>
 
 ### ANÁLISE GEOGRÁFICA
@@ -334,6 +336,8 @@ where pais = 'Brasil'
 group by pais, localizacao
 order by 3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/22_funcionarios_por_regiao_brasil.png)
+
 <br/>
 
 ### 23. Quantos funcionários por província (Canadá)?
@@ -347,6 +351,8 @@ where pais = 'Canada'
 group by pais, localizacao
 order by 3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/23_funcionarios_provincia_canada.png)
+
 <br/>
 
 
@@ -360,6 +366,8 @@ from funcionarios
 group by localizacao, pais
 order by 3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/24_regiao_provicina_maior_salario_medio.png)
+
 <br/>
 
 
@@ -373,6 +381,8 @@ from funcionarios
 group by sexo, pais
 order by 1,3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/25_distribuicao_pais_sexo.png)
+
 <br/>
 
 
@@ -384,6 +394,8 @@ select
 		count(distinct cargo)
 from funcionarios;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/26_cargos_unicos.png)
+
 <br/>
 
 
@@ -397,6 +409,8 @@ group by cargo
 order by 2 desc
 limit 10;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/27_cargos_mais_comuns.png)
+
 <br/>
 
 
@@ -410,6 +424,8 @@ group by cargo
 order by 2 desc
 limit 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/28_cargo_maior_salario_medio.png)
+
 <br/>
 
 
@@ -421,6 +437,8 @@ from funcionarios
 group by cargo
 having count(departamento) = 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/29_cargos_em_um_departamento.png)
+
 <br/>
 
 
@@ -435,6 +453,8 @@ select
 from funcionarios
 where pais = 'Brasil';
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/30_todos_os_funcionarios_brasil.png)
+
 <br/>
 
 
@@ -448,6 +468,8 @@ from funcionarios
 where departamento = 'Computadores'
 and salario > 70000;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/31_funcionarios_computadores_salario_acima_70.png)
+
 <br/>
 
 
@@ -460,6 +482,8 @@ select
 from funcionarios
 where data_admissao > '2013-01-01';
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/32_funcionarios_contratados_apos_2013.png)
+
 <br/>
 
 
@@ -471,6 +495,8 @@ select
 from funcionarios
 order by 2 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/33_liste_os_10_primeiros_funcionarios_com_maior_salario.png)
+
 <br/>
 
 
@@ -484,6 +510,8 @@ from funcionarios
 order by 3 desc
 limit 5;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/34_nome_departamento_salario_5_funcionarios_mais_bem_pagos.png)
+
 <br/>
 
 
@@ -498,6 +526,8 @@ from funcionarios
 group by departamento
 order by 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/35_departamento_domaior_para_o_menor.png)
+
 <br/>
 
 
@@ -512,6 +542,8 @@ from funcionarios
 group by departamento
 having avg(salario) > 100000;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/36_departamento_media_acima_100000.png)
+
 <br/>
 
 
@@ -524,6 +556,8 @@ from funcionarios
 group by departamento
 having count(id) > 50;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/37_departamentomais_50_funcionarios.png)
+
 <br/>
 
 
@@ -537,6 +571,8 @@ from funcionarios
 group by pais, departamento
 order by 1,3 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/38_salario_medio_pais_departamento.png)
+
 <br/>
 
 
@@ -552,6 +588,8 @@ where salario = (select
 				 from funcionarios
 				 where departamento = f.departamento);
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/39_funcionarios_mais_bem_pagos_por_departamento.png)
+
 <br/>
 
 
@@ -564,6 +602,8 @@ from funcionarios
 group by ano
 order by 2 desc;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/40_contagem_contrata%C3%A7%C3%A3o_por_ano.png)
+
 <br/>
 
 
@@ -575,3 +615,4 @@ select
 from funcionarios
 group by cargo;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/41_salario_medio_por_cargo.png)
