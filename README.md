@@ -74,6 +74,7 @@ from information_schema.columns
 where table_schema = 'public'
 and table_name = 'funcionarios';
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/3_tipos_dados_coluna.png)
 <br/>
 
 
@@ -89,6 +90,7 @@ or cargo is null
 or localizacao is null 
 or pais is null;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/4_verifica_valores_nulos.png)
 <br/>
 
 
@@ -101,6 +103,7 @@ select
 	   count(distinct pais) as paises_distintos
 from funcionarios;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/5_conta_valores_distintos.png)
 <br/>
 
 
@@ -112,6 +115,7 @@ select sexo,
 from funcionarios
 group by sexo;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/6_contagem_por_sexo.png)
 <br/>
 
 
@@ -121,6 +125,7 @@ select
 		distinct departamento
 from funcionarios;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/7_contagem_departamentos.png)
 <br/>
 
 
@@ -134,6 +139,7 @@ group by departamento
 order by 1
 limit 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/8_departamento_mais_populoso.png)
 <br/>
 
 
@@ -145,6 +151,7 @@ select
 from funcionarios
 group by 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/9_contagem_brasil_vs_canada.png)
 <br/>
 
 
@@ -154,6 +161,7 @@ select
 		round(avg(salario),2) as media_salario
 from funcionarios;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
 <br/>
 
 
