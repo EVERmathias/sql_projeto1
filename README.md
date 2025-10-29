@@ -21,7 +21,7 @@ create table funcionarios(
 			pais varchar(20)	
 );
 ```
-
+!([1_contagem_funcionarios.png](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/1_contagem_funcionarios.png))
 
 ### 1. Importando a base de dados em formato txt para o banco de dados
 ```sql
