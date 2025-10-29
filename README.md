@@ -21,7 +21,7 @@ create table funcionarios(
 			pais varchar(20)	
 );
 ```
-<br\>
+<br/>
 
 ### Importando a base de dados em formato txt para o banco de dados
 ```sql
