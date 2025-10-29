@@ -75,6 +75,7 @@ where table_schema = 'public'
 and table_name = 'funcionarios';
 ```
 ![Tipos em cada coluna](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/3_tipos_dados_coluna.png)
+
 <br/>
 
 
@@ -91,6 +92,7 @@ or localizacao is null
 or pais is null;
 ```
 ![Nulos ou duplicados](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/4_verifica_valores_nulos.png)
+
 <br/>
 
 
@@ -104,6 +106,7 @@ select
 from funcionarios;
 ```
 ![Distintos das variáveis](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/5_conta_valores_distintos.png)
+
 <br/>
 
 
@@ -116,6 +119,7 @@ from funcionarios
 group by sexo;
 ```
 ![Distribuição por sexo](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/6_contagem_por_sexo.png)
+
 <br/>
 
 
@@ -126,6 +130,7 @@ select
 from funcionarios;
 ```
 ![Departamentos distintos](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/7_contagem_departamentos.png)
+
 <br/>
 
 
@@ -152,6 +157,7 @@ from funcionarios
 group by 1;
 ```
 ![BrasilvsCanada](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/9_contagem_brasil_vs_canada.png)
+
 <br/>
 
 
@@ -162,6 +168,7 @@ select
 from funcionarios;
 ```
 ![Salário médio geral](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
+
 <br/>
 
 
@@ -172,6 +179,8 @@ select
 		max(salario) as maior_salario
 from funcionarios;
 ```
+![Salario minimo e maximo](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/11_maior_e_menor_salario.png)
+
 <br/>
 
 
@@ -181,6 +190,8 @@ select
 		round(median(salario),2) as mediana_salarial
 from funcionarios;
 ```
+![Mediana salarial](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/12_mediana_salarial.png)
+
 <br/>
 
 
@@ -190,6 +201,8 @@ select
 		round(stddev_pop(salario),2) as desvio_padrao
 from funcionarios;
 ```
+![Desvio padrao salarial](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/13_desvio_padrao.png)
+
 <br/>
 
 
