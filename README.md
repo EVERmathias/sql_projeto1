@@ -222,6 +222,8 @@ from (select
 group by mes
 order by 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/14_media_funcionarios_admitos_mes.png)
+
 <br/>
 
 
@@ -236,6 +238,8 @@ group by ano
 order by 2 desc
 limit 1;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/15_ano_maior_contratacao.png)
+
 <br/>
 
 
@@ -245,6 +249,8 @@ select
 		round(avg(((current_date - data_admissao)/365)),2) as media_anos
 from funcionarios;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/16_tempo_medio_funcionarios.png)
+
 <br/>
 
 
@@ -257,6 +263,8 @@ from funcionarios
 order by 2
 limit 10;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/17_os_10_funcionarios_mais_antigos.png)
+
 <br/>
 
 
@@ -270,6 +278,8 @@ select
 from funcionarios
 group by departamento;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/18_salario_medio_departamento.png)
+
 <br/>
 
 
@@ -283,6 +293,8 @@ group by cargo, salario
 order by 2 desc
 limit 5;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/19_cargos_mais_bem_pagos.png)
+
 <br/>
 
 
@@ -293,6 +305,8 @@ select sexo,
 from funcionarios
 group by sexo;
 ```
+![](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/20_comparacao_salario_hvsm.png)
+
 <br/>
 
 ### 21. Existe diferença salarial significativa entre regiões?
