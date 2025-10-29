@@ -167,7 +167,7 @@ select
 		round(avg(salario),2) as media_salario
 from funcionarios;
 ```
-![Salário médio geral](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
+![salario médio geral](https://github.com/EVERmathias/sql_projeto1/blob/main/projeto_imagens/10_salario_medio_geral.png)
 
 <br/>
 
